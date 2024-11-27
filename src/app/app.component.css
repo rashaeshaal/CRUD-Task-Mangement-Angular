@@ -1,0 +1,19 @@
+
+.btn-dark {
+    background-color: #343a40 !important; 
+    border-color: #343a40 !important;
+    color: #ffffff !important; 
+    transition: all 0.3s ease;
+  }
+  
+  .btn-dark:hover,
+  .btn-dark:focus {
+    background-color: #23272b !important; 
+    border-color: #1d2124 !important;
+  }
+  
+
+  button {
+    margin-right: 10px; 
+  }
+  

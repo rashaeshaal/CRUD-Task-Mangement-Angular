@@ -1,0 +1,32 @@
+<div class="task-list-container">
+  <h1>Task List</h1>
+  <button class="btn btn-primary" (click)="navigateToCreate()">Create Task</button>
+
+  <table class="table table-striped mt-3" *ngIf="tasks.length > 0; else noTasks">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ task.title }}</td>
+        <td>{{ task.description }}</td>
+        <td>{{ task.status }}</td>
+        <td>
+          <button class="btn btn-secondary btn-sm" (click)="navigateToEdit(task.id)">Edit</button>
+          <button class="btn btn-danger btn-sm" (click)="deleteTask(task.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noTasks>
+    <p>No tasks available. Click "Create Task" to add new tasks.</p>
+  </ng-template>
+</div>

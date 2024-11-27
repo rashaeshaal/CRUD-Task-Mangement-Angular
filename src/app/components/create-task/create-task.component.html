@@ -1,0 +1,28 @@
+<div class="create-task-container">
+  <h1>Create Task</h1>
+  <form [formGroup]="taskForm" (ngSubmit)="createTask()">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input id="title" type="text" formControlName="title" class="form-control" />
+      <div *ngIf="taskForm.get('title')?.invalid && taskForm.get('title')?.touched" class="error">
+        Title is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" formControlName="description" class="form-control"></textarea>
+      <div *ngIf="taskForm.get('description')?.invalid && taskForm.get('description')?.touched" class="error">
+        Description is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="status">Status</label>
+      <select id="status" formControlName="status" class="form-control">
+        <option value="Pending">Pending</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+      </select>
+    </div>
+    <button type="submit" [disabled]="taskForm.invalid" class="btn btn-primary">Create</button>
+  </form>
+</div>

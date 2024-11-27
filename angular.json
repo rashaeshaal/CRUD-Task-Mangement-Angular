@@ -37,9 +37,14 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+               "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": [],
+            "scripts": [
+                "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+                "./node_modules/@popperjs/core/dist/umd/popper.min.js",
+                "node_modules/sweetalert2/dist/sweetalert2.all.min.js"
+            ],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
@@ -101,11 +106,15 @@
             ],
             "styles": [
               "src/styles.css"
+              
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "f280b072-b8f7-43aa-b326-87d5a2496aa0"
   }
 }
